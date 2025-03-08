@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Person Details</h2>
+    <button routerLink="/add" class="btn btn-primary">+ Add Person</button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Fullname</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip Code</th>
+          <th>Phone Number</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of persons">
+          <td>{{ person.fullname }}</td>
+          <td>{{ person.address }}</td>
+          <td>{{ person.city }}</td>
+          <td>{{ person.state }}</td>
+          <td>{{ person.zip }}</td>
+          <td>{{ person.phone }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deletePerson(person.id)">Delete</button>
+            <button class="btn btn-warning" [routerLink]="['/edit', person.id]">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
